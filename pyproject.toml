@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "django_task_mon"
+version = "0.1.0"
+description = "Simple task manager"
+authors = ["VSh <vl.shumanov@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.0.2"
+django-crispy-forms = "^1.14.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

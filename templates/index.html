@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}TaskManager{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}! <a href="{% url 'logout' %}">Logout</a>
+
+  {% if tasks %}
+    <ul>
+    {% for t in tasks%}
+      <li>{{ t.name }}</li><a href="{% url 'mark_done' task_id=t.id %}">Mark done</a>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  <form method="post" class="from-group" action="create-task">
+    {% csrf_token %}
+    {{new_task_form|crispy}}
+    <button type="submit" class="btn btn-success">Create Task</button>	
+    </form>
+
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+  <a href="{% url 'register' %}">Register</a>
+
+{% endif %}
+{% endblock %}
