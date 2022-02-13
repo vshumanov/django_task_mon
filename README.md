@@ -5,6 +5,9 @@ Simple task manager with Django
 To install:
 `poetry install`
 
+to Run migrations:
+`poetry run manage.py migrate`
+
 To run:
 `poetry run manage.py runserver`
 
