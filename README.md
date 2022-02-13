@@ -1,6 +1,6 @@
-# django_fett
+# django_task_manager
 
-Django ETL project to pull and transform data from SWAPI
+Simple task manager with Django
 
 To install:
 `poetry install`
@@ -8,8 +8,10 @@ To install:
 To run:
 `poetry run manage.py runserver`
 
+Tests:
+`poetry run manage.py test`
+
 Things to improve:
 
 - Frontend is pretty ugly
-- Add tests
-- Some smaller things marked in TODOs
+- Add tests for API
